@@ -6,9 +6,9 @@ library(tidyr)
 # ---------- read functions ---------------------------------
 test_getSensitivities<- function(filename,
                                  sheetname,
-                                 icol=c(2:10), #default columns to extract from the sheet (including one for the P names)
+                                 icol=c(2:11), #default columns to extract from the sheet (including one for the P names)
                                  irow=c(3:34), #default rows to extract from the sheet
-                                 ip=c(1:9), #name of the pressures (P)
+                                 ip=c(1:10), #name of the pressures (P)
                                  iec=c(1:32), #name of the ecosystem components (EC)
                                  gather=TRUE,
                                  info=TRUE,
@@ -56,3 +56,4 @@ test_getMultiple<-function(filename){
   }
   return(df_file)
 }
+
