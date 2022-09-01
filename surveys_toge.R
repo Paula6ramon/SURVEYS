@@ -2,16 +2,17 @@ library(readxl)
 library(base)
 library(dplyr)
 library(tidyr)
+library(tibble)
 
 # ---------- read files  ---------------------------------
-setwd("C:/Users/PRA/OneDrive - NIVA/PROJECTS/ETC ICS/SURVEYS")
+setwd('C:\\Users\\PRA\\OneDrive - NIVA\\PROJECTS\\ETC ICS\\SURVEYS')
 source("test_sensitivity.R")
 
-setwd('C:\\Users\\PRA\\OneDrive - NIVA\\PROJECTS\\ETC ICS\\SURVEYS\\SURVEYS_DATA')
+path <- setwd('C:\\Users\\PRA\\OneDrive - NIVA\\PROJECTS\\ETC ICS\\SURVEYS\\SURVEYS_DATA')
 filelist<-list.files(pattern= 'xlsx')
-
+view(filelist)
 #apply the function to all the surveys
-for(i in 5:length(filelist)){
+for(i in 1:length(filelist)){
   file<-filelist[i]
   
 if(file=="Survey_EEA_climate_Baltic_SYKE_ML.xlsx")
@@ -50,7 +51,7 @@ df_all2 <- df_all %>%
   filter(!is.na(S)) %>%
   mutate(S=as.numeric(S)) %>%
   group_by(P,EC) %>%
-  summarise(count=n(),Smean=mean(S,na.rm=T)) %>%
+  summarise(count=n(),S=mean(S,na.rm=T)) %>%
   ungroup() 
 
 df_mean <- df_all2 %>%
@@ -58,18 +59,18 @@ df_mean <- df_all2 %>%
          EC=as.numeric(substr(EC,3,nchar(EC)))) %>%
   group_by(P,EC) %>%
   summarise(n=n(),
-            Savg=round(mean(Smean,na.rm=T),2),
-            Smed=median(Smean,na.rm=T))
+            Savg=round(mean(S,na.rm=T),2),
+            Smed=median(S,na.rm=T))
 
 
+
+df_med <- df_mean %>%
+  select(P,EC,S=Smed) %>%
+  spread(key="EC",value="S")
 
 df_mean <- df_mean %>%
   select(P,EC,S=Savg) %>%
   spread(key="EC",value="S")
 
-ec_order<-c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,22,27,19,20,21,23,24,25,26,28,29,30,31,32,33)
-p_order <- c(1,2,3,4,5,6,7,8,9)
-
-df_mean <- df_mean[p_order,ec_order]
 
 write.table(df_mean,file="../survey_avg_test.csv",col.names=T,row.names=F,sep=";",na="")
