@@ -46,19 +46,12 @@ df_all$S <- classif[df_all$S]
 
 #get the average
 
-
 df_all2 <- df_all %>%
   filter(!is.na(S)) %>%
-  mutate(S=as.numeric(S)) %>%
-  group_by(P,EC) %>%
-  summarise(count=n(),S=mean(S,na.rm=T)) %>%
-  ungroup() 
-
-df_mean <- df_all2 %>%
   mutate(P=as.numeric(substr(P,2,nchar(P))),
          EC=as.numeric(substr(EC,3,nchar(EC)))) %>%
   group_by(P,EC) %>%
-  summarise(n=n(),
+  summarise(count=n(),
             Savg=round(mean(S,na.rm=T),2),
             Smed=median(S,na.rm=T))
 
