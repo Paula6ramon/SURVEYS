@@ -57,11 +57,11 @@ df_all2 <- df_all %>%
 
 
 
-df_med <- df_mean %>%
+df_med <- df_all2 %>%
   select(P,EC,S=Smed) %>%
   spread(key="EC",value="S")
 
-df_mean <- df_mean %>%
+df_mean <- df_all2 %>%
   select(P,EC,S=Savg) %>%
   spread(key="EC",value="S")
 
