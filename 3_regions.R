@@ -81,24 +81,24 @@ df_all2 <- df_all%>%
 test<- df_all2%>%
   split(.$`Regional sea`)
 
-#it works until here
-#next: get the means and median from the list
+
 for (i in 1:length(test)) {
   regnames[i] <- paste('stats/', names(test[i]), sep='')
   write.csv(test[[i]], file= paste(regnames[i],'stats.csv', sep='_'))
 }
 
+
 statslist <- list.files(paste0(homefolder, 'stats'))
 
 getMed <- function(filename){
-  dt <- read.csv(filename, header=T, sep=',')
+  dt <- read.csv(paste0('stats/',filename), header=T, sep=',')
   
   df_med <- dt%>%
     select(P, EC, Smedian)%>%
     spread(key='EC', value='Smedian')
 }
 getMean <- function(filename){
-  dt <- read.csv(filename, header=T, sep=',')
+  dt <- read.csv(paste0('stats/',filename), header=T, sep=',')
   
   df_mean <- dt%>%
     select(P, EC, Smean)%>%
@@ -106,14 +106,19 @@ getMean <- function(filename){
     
 }
 
-#works
-#keep working on the next things
-try <-map(statslist,getStats)
-for (i in 1:length(statslist)){
-  stats<- getMed(filename[i])
-  
+#----------------------------GET THE MEDIAN------------------------------------
+med <-map(statslist,getMed)
+names(med) <- c('Baltic Sea_med', 'Black Sea_med', 'Mediteranean Sea_med', 'North East Atlantic_med')
+
+for (i in 1:length(med)){
+  write.csv(med[i], file= paste0('stats/',names(med[i]), '.csv'))
 }
 
-write.table(df_mean,file="../survey_avg_test.csv",col.names=T,row.names=F,sep=";",na="")
+#-----------------------------GET THE MEAN-------------------------------------
 
+mean <-map(statslist,getMean)
+names(mean) <- c('Baltic Sea_mean', 'Black Sea_mean', 'Mediteranean Sea_mean', 'North East Atlantic_mean')
 
+for (i in 1:length(mean)){
+  write.csv(mean[i], file= paste0('stats/',names(mean[i]), '.csv'))
+}
