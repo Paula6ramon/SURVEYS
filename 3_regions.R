@@ -82,13 +82,13 @@ test<- df_all2%>%
   split(.$`Regional sea`)
 
 
-
+regnames <- paste('stats/', names(test[i]), sep='')
 for (i in 1:length(test)) {
   regnames[i] <- paste('stats/', names(test[i]), sep='')
 }
 
 for (i in 1:length(test)) {
-  write.csv(test[[i]], file= paste(regnames[i],'stats.csv', sep='_'))
+  write.csv(test[[i]], file= paste(regnames[i],'stats.csv', sep='_'), row.names= F)
 }
 
 
@@ -115,7 +115,7 @@ med <-map(statslist,getMed)
 names(med) <- c('Baltic Sea_med', 'Black Sea_med', 'Mediterranean Sea_med', 'North East Atlantic_med')
 
 for (i in 1:length(med)){
-  write.csv(med[i], file= paste0('stats/',names(med[i]), '.csv'))
+  write.csv(med[[i]], file= paste0('stats/',names(med[i]), '.csv'),  row.names = F)
 }
 
 #-----------------------------GET THE MEAN-------------------------------------
@@ -124,5 +124,5 @@ mean <-map(statslist,getMean)
 names(mean) <- c('Baltic Sea_mean', 'Black Sea_mean', 'Mediterranean Sea_mean', 'North East Atlantic_mean')
 
 for (i in 1:length(mean)){
-  write.csv(mean[i], file= paste0('stats/',names(mean[i]), '.csv'))
+  write.csv(mean[[i]], file= paste0('stats/',names(mean[i]), '.csv'), row.names = F)
 }
