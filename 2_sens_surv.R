@@ -25,8 +25,6 @@ for (i in 1:length(filelist)){
   }}
 
 
-#ahora hay q separarlos segun el mar u oceano
-
 
 
 
