@@ -76,7 +76,8 @@ df_all2 <- df_all%>%
   group_by(`Regional sea`,P,EC) %>%
   summarise(count=n(),
             Smean=round(mean(Sensitivity,na.rm=T),2),
-            Smedian=median(Sensitivity,na.rm=T))
+            Smedian=median(Sensitivity,na.rm=T))%>%
+  ungroup()
 
 test<- df_all2%>%
   split(.$`Regional sea`)
