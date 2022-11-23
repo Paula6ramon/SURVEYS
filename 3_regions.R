@@ -70,7 +70,15 @@ df_all <-df_all%>%
   mutate(P=as.numeric(substr(P,2,nchar(P))), 
          EC=as.numeric(substr(EC, 3, nchar(EC))))
   
-#get the average
+#get the average---------------
+
+#right now we do not have a EC map layer divided for pelagic and demersal fish so we 
+#will join these two EC in one and get the average as one EC. 
+#REMOVE IF WE GET THE EXTRA DATA FOR DIVIDING THEM
+
+df_all <- df_all%>%
+  mutate(EC = ifelse(df_all$EC==24, 23, df_all$EC ))
+
 
 df_all2 <- df_all%>%
   group_by(`Regional sea`,P,EC) %>%
@@ -79,6 +87,7 @@ df_all2 <- df_all%>%
             Smedian=median(Sensitivity,na.rm=T))%>%
   ungroup()
 
+#get the averages per REgional sea
 test<- df_all2%>%
   split(.$`Regional sea`)
 

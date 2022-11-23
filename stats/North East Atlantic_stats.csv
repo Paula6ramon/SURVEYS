@@ -21,8 +21,7 @@
 "North East Atlantic",1,20,9,2.56,3
 "North East Atlantic",1,21,10,2.2,2
 "North East Atlantic",1,22,10,2.4,2
-"North East Atlantic",1,23,10,2.2,2
-"North East Atlantic",1,24,10,2.2,2
+"North East Atlantic",1,23,20,2.2,2
 "North East Atlantic",1,25,9,1.56,1
 "North East Atlantic",1,26,9,2,2
 "North East Atlantic",1,27,9,1.44,1
@@ -53,8 +52,7 @@
 "North East Atlantic",2,20,9,2.78,3
 "North East Atlantic",2,21,10,2.2,2
 "North East Atlantic",2,22,10,2.3,2
-"North East Atlantic",2,23,10,2.4,3
-"North East Atlantic",2,24,10,2.1,2.5
+"North East Atlantic",2,23,20,2.25,3
 "North East Atlantic",2,25,9,2.11,2
 "North East Atlantic",2,26,9,2.44,3
 "North East Atlantic",2,27,9,1.56,2
@@ -85,8 +83,7 @@
 "North East Atlantic",3,20,9,2.22,2
 "North East Atlantic",3,21,10,1.7,1.5
 "North East Atlantic",3,22,10,2.3,2
-"North East Atlantic",3,23,10,1.8,1.5
-"North East Atlantic",3,24,10,1.8,2
+"North East Atlantic",3,23,20,1.8,2
 "North East Atlantic",3,25,9,1,1
 "North East Atlantic",3,26,9,1,1
 "North East Atlantic",3,27,9,1.11,1
@@ -117,8 +114,7 @@
 "North East Atlantic",4,20,9,1.89,2
 "North East Atlantic",4,21,10,1.6,2
 "North East Atlantic",4,22,10,1.5,1.5
-"North East Atlantic",4,23,10,1.7,2
-"North East Atlantic",4,24,10,2.1,2
+"North East Atlantic",4,23,20,1.9,2
 "North East Atlantic",4,25,9,0.78,1
 "North East Atlantic",4,26,9,0.78,1
 "North East Atlantic",4,27,9,1,1
@@ -149,8 +145,7 @@
 "North East Atlantic",5,20,9,2.33,2
 "North East Atlantic",5,21,10,1.9,2
 "North East Atlantic",5,22,10,1.5,2
-"North East Atlantic",5,23,10,2.8,3
-"North East Atlantic",5,24,10,2.9,3
+"North East Atlantic",5,23,20,2.85,3
 "North East Atlantic",5,25,9,0.33,0
 "North East Atlantic",5,26,9,0.33,0
 "North East Atlantic",5,27,9,0.44,0
@@ -181,8 +176,7 @@
 "North East Atlantic",6,20,9,2,2
 "North East Atlantic",6,21,10,0.1,0
 "North East Atlantic",6,22,10,0.8,0
-"North East Atlantic",6,23,10,0.6,1
-"North East Atlantic",6,24,10,0.1,0
+"North East Atlantic",6,23,20,0.35,0
 "North East Atlantic",6,25,9,0.56,0
 "North East Atlantic",6,26,9,0.56,0
 "North East Atlantic",6,27,9,0.33,0
@@ -213,8 +207,7 @@
 "North East Atlantic",7,20,3,2,3
 "North East Atlantic",7,21,3,1.33,2
 "North East Atlantic",7,22,3,2,3
-"North East Atlantic",7,23,3,0.67,1
-"North East Atlantic",7,24,3,0.67,1
+"North East Atlantic",7,23,6,0.67,1
 "North East Atlantic",7,25,3,0.67,1
 "North East Atlantic",7,26,3,0.67,1
 "North East Atlantic",7,27,3,0.67,1
@@ -245,8 +238,7 @@
 "North East Atlantic",8,20,9,1.67,2
 "North East Atlantic",8,21,10,2,2
 "North East Atlantic",8,22,10,2.1,2
-"North East Atlantic",8,23,10,1.2,1
-"North East Atlantic",8,24,10,0.9,1
+"North East Atlantic",8,23,20,1.05,1
 "North East Atlantic",8,25,9,1.78,2
 "North East Atlantic",8,26,9,1.67,1
 "North East Atlantic",8,27,9,0.67,1
@@ -277,8 +269,7 @@
 "North East Atlantic",9,20,9,2.22,2
 "North East Atlantic",9,21,10,2,2
 "North East Atlantic",9,22,10,2.8,3
-"North East Atlantic",9,23,10,1.7,2
-"North East Atlantic",9,24,10,1.8,2
+"North East Atlantic",9,23,20,1.75,2
 "North East Atlantic",9,25,9,1,1
 "North East Atlantic",9,26,9,1,1
 "North East Atlantic",9,27,9,1.22,1
